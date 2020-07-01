@@ -1,0 +1,78 @@
+table {
+    display: flex;
+    flex-direction: column;
+    background-color: #b69a4c;
+    box-shadow: 0 0 5px inset rgb(97, 232, 236);
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    margin-top: 5px;
+    thead {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        a {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            font-size: 2em;
+            padding: 10px;
+            padding-top: 0;
+            .brand {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                transition: 2s;
+                span {
+                    text-align: center;
+                }
+                @media (max-width: 460px) {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    tbody {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-self: stretch;
+        padding: 10px 10px 1px 10px;
+        border-top: 1px solid silver;
+        margin-bottom: 1px;
+        td {
+            display: flex;
+            flex-direction: row;
+            input {
+                box-shadow: 0 0 5px rgb(224, 106, 215);
+                flex-grow: 1;
+                border: none;
+            }
+            button {
+                flex-grow: 1;
+                border: none;
+                transition: .5s;
+                min-height: 40px;
+                box-shadow: 0 0 5px rgb(0, 0, 0);
+                background-color: #da7474;
+                color: #231c14;
+                font-weight: bold;
+            }
+            button:hover {
+                background-color: #a2e968;
+                color: rgb(41, 141, 136);
+            }
+        }
+    }
+}
+
+
+/*app-menu {
+    display: flex;
+    justify-content: center;
+    margin: auto 0;
+}*/

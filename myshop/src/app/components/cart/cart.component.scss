@@ -1,0 +1,113 @@
+.products {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1000px;
+    padding: 10px;
+    thead {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        box-shadow: 0 0 5px inset black;
+        background-color: #b4bbc5;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+    tbody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .payment {
+            display: flex;
+            form {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                tr {
+                    display: flex;
+                    flex-grow: 1;
+                    margin-bottom: 0;
+                    td {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        padding: 10px;
+                        input {
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            border: none;
+                            border-radius: 20px;
+                            box-shadow: 0 0 5px black;
+                        }
+                    }
+                }
+            }
+            @media(max-width: 890px) {
+                form {
+                    flex-direction: column;
+                    tr:nth-child(1) {
+                        margin-bottom: 10px;
+                    }
+                    td:nth-child(1) {
+                        border-bottom: 1px solid grey;
+                    }
+                }
+            }
+        }
+        tr {
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #b4bbc5;
+            border-radius: 20px;
+            box-shadow: 0 0 5px inset black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            .pictures {
+                display: flex;
+                justify-content: center;
+                min-width: 300px;
+                max-width: 350px;
+                min-height: 400px;
+                max-height: 450px;
+                padding-right: 15px;
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 20px;
+                    box-shadow: 0 0 5px black;
+                }
+            }
+            button {
+                display: block;
+                width: 100%;
+                min-height: 40px;
+                border: none;
+                transition: .5s;
+                background-color: white;
+                color: black;
+                box-shadow: 0 0 5px black;
+            }
+            button:hover {
+                color: white;
+                background-color: navy;
+            }
+        }
+        @media(max-width: 890px) {
+            tr {
+                flex-direction: column;
+                align-items: stretch;
+                .pictures {
+                    align-self: center;
+                    min-width: 210px;
+                    max-width: 260px;
+                    min-height: 250px;
+                    max-height: 300px;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

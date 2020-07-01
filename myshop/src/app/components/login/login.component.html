@@ -1,0 +1,23 @@
+<app-panel-top></app-panel-top>
+
+<table>
+    <thead>
+        <span><h1><b>Login</b></h1></span>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><input type="text" class="form-control" id="dropdownName1" placeholder="Login" onchange="allCheck()" /></td>
+            <span class="d-none" id="errorMessName1">* Error login</span>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control" id="dropdownName2" placeholder="Password" onchange="allCheck()" /></td>
+            <span class="d-none" id="errorMessName2">* Error password</span>
+        </tr>
+    </tbody>
+    <tfoot>
+        <button id="sub" type="button" disabled='1' routerLink="/dashboard">Log In</button>
+    </tfoot>
+</table>
+
+<app-down-panel></app-down-panel>

@@ -1,0 +1,33 @@
+<app-panel-top></app-panel-top>
+
+<table class="adm-add">
+    <thead>
+        <h1><b>Add new product</b></h1>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <span>Link to image</span>
+                <span>Title</span>
+                <span>Price</span>
+                <span>Category</span>
+            </td>
+
+            <td>
+                <input type="text" [(ngModel)]="newProduct.thumbnail">
+                <input type="text" [(ngModel)]="newProduct.title">
+                <input type="number" [(ngModel)]="newProduct.price">
+                <select [(ngModel)]="newProduct.category">
+                    <option value="game">game</option>
+                    <option value="tool">tool</option>
+                  </select>
+            </td>
+        </tr>
+        <tr style="border-top: 1px solid silver;">
+            <button class="add" (click)="this.mainService.addProduct(newProduct)">Dodaj</button>
+        </tr>
+    </tbody>
+</table>
+
+<app-down-panel></app-down-panel>

@@ -1,0 +1,72 @@
+<app-panel-top></app-panel-top>
+
+<table class="products">
+    <thead>
+        <span><h1><b>Cart</b></h1></span>
+    </thead>
+
+    <tbody>
+        <ng-container *ngFor="let product of this.mainService.cart">
+            <tr>
+                <td class="pictures">
+                    <img src="{{product.product.thumbnail}}" alt="">
+                </td>
+
+                <td>
+                    <div>
+                        <h1><b>{{product.product.title}}</b></h1>
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores tempora, reiciendis alias ipsum possimus quo earum laborum necessitatibus obcaecati deserunt commodi perferendis optio sapiente adipisci quos esse rerum maxime aspernatur
+                            eos quaerat, facere iure ipsa libero impedit? Ullam iusto illo quis quasi nihil, nobis repellendus voluptate fuga, commodi illum repellat.
+                        </p>
+                    </div>
+                    <div>
+                        <b>Category: {{product.product.category}}</b>
+                    </div>
+                    <div>
+                        <h2><b>Price: {{product.product.price}} zł</b></h2>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>
+
+        <div class="payment">
+            <form action="http://www.jakubadamus.cba.pl/paypal.php" method="get" #paymentForm>
+                <tr>
+                    <td>
+                        <input type="text" #firstName name="firstName" id="" placeholder="Nickname">
+                        <input type="text" #email name="email" id="" placeholder="Email">
+                        <input type="text" name="phone" id="" placeholder="Phone">
+
+                    </td>
+                    <td>
+                        <span><b>Summary:</b> {{getCartPrice()}} zł</span>
+
+                        <label for="accept"><span><b>Accept the terms and conditions:</b></span>
+                      <input #regulamin type="checkbox" name="aggrement" id="accept" (change)="1">
+                    </label>
+                    </td>
+                </tr>
+
+                <tr style="flex-direction: column; background-color: white;">
+                    <td>
+                        <a href="https://www.paypal.com/pl/webapps/mpp/paypal-popup" title="Jak działa PayPal" onclick="javascript:window.open('https://www.paypal.com/pl/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;">
+                            <img style="border-radius: 20px; width: 100%; max-height: 100px;" src="https://www.paypalobjects.com/webstatic/mktg/logo-center/banner_pl_just_pp_319x110.jpg" alt="Znaki akceptacji PayPal" />
+                        </a>
+                    </td>
+
+                    <td>
+                        <button [disabled]="!regulamin.checked" (click)="paymentForm.submit()">Buy</button>
+                    </td>
+                </tr>
+
+                <ng-container *ngFor="let product of this.mainService.cart">
+                    <input type="hidden" name="products[]" value="{{ product | json }}">
+                </ng-container>
+            </form>
+        </div>
+    </tbody>
+</table>
+
+<app-down-panel></app-down-panel>

@@ -1,0 +1,39 @@
+<app-panel-top></app-panel-top>
+
+<table class="products">
+    <thead>
+        <span><h1><b>Products</b></h1></span>
+    </thead>
+
+    <tbody>
+        <ng-container *ngFor="let product of this.mainService.products?.productsTable">
+            <tr>
+                <td class="pictures">
+                    <img src="{{this.product.thumbnail}}" alt="">
+                </td>
+
+                <td>
+                    <div>
+                        <h1><b>{{product.title}}</b></h1>
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores tempora, reiciendis alias ipsum possimus quo earum laborum necessitatibus obcaecati deserunt commodi perferendis optio sapiente adipisci quos esse rerum maxime aspernatur
+                            eos quaerat, facere iure ipsa libero impedit? Ullam iusto illo quis quasi nihil, nobis repellendus voluptate fuga, commodi illum repellat.
+                        </p>
+                    </div>
+                    <div>
+                        <b>Category: {{product.category}}</b>
+                    </div>
+                    <div>
+                        <h2><b>Price: {{product.price}} zł</b></h2>
+                    </div>
+
+                    <button (click)="addToCart(product)">To cart</button>
+                </td>
+            </tr>
+
+        </ng-container>
+    </tbody>
+</table>
+
+<app-down-panel></app-down-panel>

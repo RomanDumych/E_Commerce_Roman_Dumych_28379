@@ -1,0 +1,57 @@
+<app-panel-top></app-panel-top>
+
+<table class="charts">
+    <thead>
+        <span><h1><b>Charts</b></h1></span>
+    </thead>
+
+    <tbody>
+        <div class="content-container">
+            <div style="display: flex">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+            </div>
+            <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
+        </div>
+    </tbody>
+
+    <tfoot>
+        <tr class="head">
+            <td class="id">
+                <p>ID</p>
+            </td>
+            <td class="name">
+                <p>Name</p>
+            </td>
+            <td class="email">
+                <p>Email</p>
+            </td>
+            <td class="phone">
+                <p>Telefon</p>
+            </td>
+            <td class="price">
+                <p>Price</p>
+            </td>
+        </tr>
+
+        <tr *ngFor="let order of this.mainService.orders?.orders">
+            <td class="id">
+                <p>{{order.id}}</p>
+            </td>
+            <td class="name">
+                <p>{{order.first_name}} {{order.last_name}}</p>
+            </td>
+            <td class="email">
+                <p>{{order.email}}</p>
+            </td>
+            <td class="phone">
+                <p>{{order.phone}}</p>
+            </td>
+            <td class="price">
+                <p>{{order.price}}</p>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<app-down-panel></app-down-panel>

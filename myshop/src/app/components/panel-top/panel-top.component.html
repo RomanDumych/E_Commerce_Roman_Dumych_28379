@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <td>
+            <a routerLink="/landing">
+                <div class="brand">
+                    <span style="padding: 0 10px 0 10px; font-size: 100%;">C Y B E R</span>
+                    <span style="padding: 0 10px 0 10px; font-size: 100%;">S H O K</span>
+                </div>
+            </a>
+        </td>
+    </thead>
+
+    <tbody>
+        <td>
+            <input type="text" [(ngModel)]="this.mainService.productsRequest.name" placeholder="...">
+        </td>
+        <td>
+            <button type="button" (click)="this.mainService.getProducts(this.mainService.productsRequest)" routerLink="/products">Search</button>
+        </td>
+    </tbody>
+
+    <tfoot>
+        <app-menu></app-menu>
+    </tfoot>
+</table>
